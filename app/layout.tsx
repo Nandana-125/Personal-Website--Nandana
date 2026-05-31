@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Schibsted_Grotesk, Martian_Mono } from "next/font/google";
 import "./globals.css";
+import Stars from "@/components/Stars";
+import Header from "@/components/Header";
+import RecruiterToggle from "@/components/RecruiterToggle";
 
 const sans = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -24,7 +27,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${sans.variable} ${mono.variable}`}>
+        {" "}
+        <Header />
+        <Stars />
+        {children}
+        <RecruiterToggle />
+      </body>
     </html>
   );
 }
