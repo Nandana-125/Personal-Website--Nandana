@@ -19,12 +19,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "missing key" }, { status: 500 });
 
     const contents = (messages || [])
+      .slice(-10) // only keep the last 10 turns
       .map((m: { from: string; text: string }) => ({
         role: m.from === "user" ? "user" : "model",
-        parts: [{ text: m.text }],
+        parts: [{ text: String(m.text || "").slice(0, 600) }], // cap each message length
       }))
       .filter((c: { parts: { text: string }[] }) => c.parts[0].text?.trim());
-
     while (contents.length && contents[0].role === "model") contents.shift();
     if (!contents.length)
       return NextResponse.json({ error: "empty" }, { status: 400 });
