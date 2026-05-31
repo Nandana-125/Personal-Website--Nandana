@@ -2,6 +2,8 @@ import Terminal from "@/components/Terminal";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
+import About from "@/components/About";
+import Interests from "@/components/Interests";
 export default function Home() {
   return (
     <main>
@@ -33,6 +35,8 @@ export default function Home() {
       <Projects />
       <Skills />
       <Timeline />
+      <About />
+      <Interests />
     </main>
   );
 }

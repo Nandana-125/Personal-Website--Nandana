@@ -1,0 +1,66 @@
+.col {
+  max-width: 760px;
+}
+.procs {
+  display: flex;
+  flex-direction: column;
+}
+.proc {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 19px 0;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+}
+.proc:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.pid {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--olive);
+}
+.usage {
+  width: 64px;
+  height: 3px;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-left: auto;
+}
+.usage span {
+  display: block;
+  height: 100%;
+  background: var(--hi);
+  width: 40%;
+  animation: usage 3.2s ease-in-out infinite;
+}
+.proc:nth-child(2) .usage span {
+  animation-duration: 4.1s;
+  animation-delay: 0.4s;
+}
+.proc:nth-child(3) .usage span {
+  animation-duration: 2.7s;
+  animation-delay: 0.8s;
+}
+@keyframes usage {
+  0%,
+  100% {
+    width: 22%;
+  }
+  50% {
+    width: 78%;
+  }
+}
+.pc {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+:global(body.recruiter) .usage span {
+  animation: none;
+  width: 55%;
+}
