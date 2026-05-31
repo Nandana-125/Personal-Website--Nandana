@@ -4,6 +4,7 @@ import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
 import About from "@/components/About";
 import Interests from "@/components/Interests";
+import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <main>
@@ -37,6 +38,7 @@ export default function Home() {
       <Timeline />
       <About />
       <Interests />
+      <Contact />
     </main>
   );
 }
