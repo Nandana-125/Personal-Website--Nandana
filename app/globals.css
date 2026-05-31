@@ -18,13 +18,13 @@ body {
   background: var(--bg);
   color: var(--text);
 }
-
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
+/* ===== STARFIELD ===== */
 .stars {
   position: fixed;
   inset: 0;
@@ -78,6 +78,7 @@ body {
   }
 }
 
+/* ===== HEADER ===== */
 .site-header {
   position: fixed;
   top: 0;
@@ -124,7 +125,6 @@ body {
   opacity: 0.5;
   font-size: 13px;
 }
-
 @media (max-width: 820px) {
   .nav {
     display: none;
@@ -133,6 +133,8 @@ body {
     padding: 18px;
   }
 }
+
+/* ===== RECRUITER TOGGLE ===== */
 .rtoggle {
   position: fixed;
   left: 26px;
@@ -183,7 +185,6 @@ body.recruiter .switch::after {
   transform: translateX(15px);
   background: var(--text);
 }
-
 @media (max-width: 820px) {
   .rtoggle {
     left: 12px;
@@ -191,6 +192,7 @@ body.recruiter .switch::after {
   }
 }
 
+/* ===== LAYOUT + HERO ===== */
 .container {
   width: 100%;
   max-width: 1140px;
@@ -313,6 +315,8 @@ h1 span {
     justify-self: start;
   }
 }
+
+/* ===== TERMINAL ===== */
 .hterm {
   width: 100%;
   height: 100%;
@@ -383,4 +387,159 @@ h1 span {
 }
 body.recruiter .vs-cur {
   animation: none;
+}
+
+/* ===== REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== SECTION HEADS ===== */
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+.sec-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.sec-title {
+  font-family: var(--font-sans);
+  font-size: clamp(26px, 3.6vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.sec-kick {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+/* ===== PROJECTS ===== */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+.svc {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.25s;
+}
+.svc:hover {
+  border-color: var(--line-2);
+  transform: translateY(-3px);
+}
+.svc-viz {
+  height: 74px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-lift);
+  position: relative;
+  overflow: hidden;
+}
+.svc-viz svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.svc-pad {
+  padding: 16px 17px 18px;
+}
+.svc-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+.svc-name {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.health {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.health .d {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hi);
+}
+.health.build .d {
+  background: var(--muted);
+  animation: blink2 1.3s infinite;
+}
+body.recruiter .health.build .d {
+  animation: none;
+}
+@keyframes blink2 {
+  50% {
+    opacity: 0.3;
+  }
+}
+.svc-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 13px;
+}
+.telemetry {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.tele {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--muted);
+}
+.tele b {
+  color: var(--text);
+  font-weight: 500;
+}
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 3px 8px;
 }

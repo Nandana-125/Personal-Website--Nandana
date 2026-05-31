@@ -1,4 +1,5 @@
 import Terminal from "@/components/Terminal";
+import Projects from "@/components/Projects";
 export default function Home() {
   return (
     <main>
@@ -27,6 +28,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Projects />
     </main>
   );
 }
