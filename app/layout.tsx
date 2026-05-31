@@ -4,6 +4,7 @@ import "./globals.css";
 import Stars from "@/components/Stars";
 import Header from "@/components/Header";
 import RecruiterToggle from "@/components/RecruiterToggle";
+import AskAI from "@/components/AskAI";
 
 const sans = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Stars />
         {children}
         <RecruiterToggle />
+        <AskAI />
       </body>
     </html>
   );

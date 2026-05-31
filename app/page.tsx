@@ -5,6 +5,7 @@ import Timeline from "@/components/Timeline";
 import About from "@/components/About";
 import Interests from "@/components/Interests";
 import Contact from "@/components/Contact";
+import GitHubActivity from "@/components/GitHubActivity";
 export default function Home() {
   return (
     <main>
@@ -39,6 +40,7 @@ export default function Home() {
       <Timeline />
       <About />
       <Interests />
+      <GitHubActivity />
       <Contact />
     </main>
   );
