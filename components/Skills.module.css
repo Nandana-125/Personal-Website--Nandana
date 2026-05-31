@@ -1,0 +1,142 @@
+.comb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0 4px;
+}
+.combRow {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.combRow + .combRow {
+  margin-top: -25px;
+}
+
+.hex {
+  position: relative;
+  width: 94px;
+  height: 106px;
+  cursor: default;
+  opacity: 0;
+  transform: scale(0.55);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s;
+}
+.hex.in {
+  opacity: 1;
+  transform: none;
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: linear-gradient(
+    140deg,
+    rgba(193, 209, 207, 0.5),
+    rgba(116, 139, 145, 0.18) 42%,
+    transparent 60%,
+    rgba(99, 100, 103, 0.5)
+  );
+  transition: filter 0.25s;
+}
+.core {
+  position: absolute;
+  inset: 1.4px;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.core img {
+  width: 38px;
+  height: 38px;
+  transition: filter 0.25s;
+}
+.abbr {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  padding: 0 4px;
+  transition: color 0.25s;
+}
+
+.hex.in:hover {
+  transform: scale(1.09);
+  z-index: 5;
+}
+.hex:hover .face {
+  filter: drop-shadow(0 0 12px rgba(193, 209, 207, 0.45));
+}
+.hex:hover .core img {
+  filter: brightness(1.12);
+}
+.hex:hover .abbr {
+  color: var(--text);
+}
+
+.tip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 7px);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  background: var(--bg-lift);
+  border: 1px solid var(--line-2);
+  border-radius: 7px;
+  padding: 6px 11px;
+  z-index: 6;
+  transition: 0.2s;
+}
+.hex:hover .tip {
+  opacity: 1;
+  transform: translate(-50%, -5px);
+}
+.tn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text);
+  display: block;
+}
+.tc {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+}
+
+.combLegend {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+@media (max-width: 560px) {
+  .combRow + .combRow {
+    margin-top: -19px;
+  }
+  .hex {
+    width: 72px;
+    height: 82px;
+  }
+  .core img {
+    width: 30px;
+    height: 30px;
+  }
+  .abbr {
+    font-size: 10px;
+  }
+}
