@@ -20,9 +20,10 @@ export default function Home() {
                 Nandana<span>Pradeep</span>
               </h1>
               <p className="lede">
-                Frontend engineer who also runs the infrastructure underneath.{" "}
+                Software engineer who likes the whole stack:{" "}
                 <b>
-                  React on the surface, MLOps &amp; observability in the stack.
+                  Clean interfaces on top, reliable infrastructure &amp; ML
+                  pipelines underneath.
                 </b>
               </p>
             </div>

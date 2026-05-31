@@ -12,7 +12,12 @@ export default function Projects() {
 
         <Reveal className="grid2">
           {/* foresight-ml */}
-          <div className="svc">
+          <a
+            className="svc"
+            href="https://github.com/Nandana-125/foresight_ml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="svc-viz">
               <svg viewBox="0 0 300 74" preserveAspectRatio="none">
                 <polyline
@@ -38,27 +43,35 @@ export default function Projects() {
                 </span>
               </div>
               <p className="svc-desc">
-                Real-time ML data pipeline — ingests, validates, and serves data
-                with monitoring built in.
+                End-to-end MLOps data pipeline turning public SEC filings &
+                macro signals into validated, bias-checked training data,
+                Airflow-orchestrated, DVC-versioned, CI-gated.
               </p>
               <div className="telemetry">
                 <span className="tele">
-                  uptime <b>99.8%</b>
+                  sources <b>SEC+FRED</b>
                 </span>
                 <span className="tele">
-                  p99 <b>42ms</b>
+                  data <b>DVC-versioned</b>
                 </span>
               </div>
               <div className="tags">
                 <span className="tag">Python</span>
-                <span className="tag">PostgreSQL</span>
+                <span className="tag">Airflow</span>
                 <span className="tag">MLflow</span>
+                <span className="tag">DVC</span>
+                <span className="tag">BigQuery</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          {/* trading-portal */}
-          <div className="svc">
+          {/* signlingo */}
+          <a
+            className="svc"
+            href="https://github.com/Nandana-125/Signlingo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="svc-viz">
               <svg viewBox="0 0 300 74">
                 <g fill="#748b91">
@@ -77,34 +90,41 @@ export default function Projects() {
             </div>
             <div className="svc-pad">
               <div className="svc-top">
-                <span className="svc-name">trading-portal</span>
+                <span className="svc-name">signlingo</span>
                 <span className="health">
                   <span className="d" />
                   healthy
                 </span>
               </div>
               <p className="svc-desc">
-                Rebuilt a 5+ year legacy trading portal frontend — faster,
-                cleaner, fully charted.
+                Full-stack ASL learning app — lessons, timed quizzes, and live
+                webcam sign practice via an ML detector, with XP, levels, and a
+                leaderboard.
               </p>
               <div className="telemetry">
                 <span className="tele">
-                  uptime <b>99.9%</b>
+                  quiz levels <b>10</b>
                 </span>
                 <span className="tele">
-                  p99 <b>28ms</b>
+                  live <b>webcam ML</b>
                 </span>
               </div>
               <div className="tags">
                 <span className="tag">React</span>
-                <span className="tag">Redux</span>
-                <span className="tag">Chart.js</span>
+                <span className="tag">Express</span>
+                <span className="tag">MongoDB</span>
+                <span className="tag">FastAPI</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          {/* project-three (placeholder) */}
-          <div className="svc">
+          {/* sooner */}
+          <a
+            className="svc"
+            href="https://github.com/Nandana-125/soonerapp1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="svc-viz">
               <svg viewBox="0 0 300 74">
                 <g stroke="#636467" strokeWidth="1" fill="none" opacity="0.7">
@@ -123,100 +143,33 @@ export default function Projects() {
             </div>
             <div className="svc-pad">
               <div className="svc-top">
-                <span className="svc-name">project-three</span>
+                <span className="svc-name">sooner</span>
                 <span className="health">
                   <span className="d" />
                   healthy
                 </span>
               </div>
               <p className="svc-desc">
-                [ Placeholder — a real project: what it does + impact, one line.
-                ]
+                Virtual walk-in queue manager — customers join a live queue at a
+                venue, track real-time position and wait, and get a 45-min
+                near-turn timer; owners manage capacity from a live dashboard.
               </p>
               <div className="telemetry">
                 <span className="tele">
-                  uptime <b>99.x%</b>
+                  queue <b>real-time</b>
                 </span>
                 <span className="tele">
-                  p99 <b>--ms</b>
+                  timer <b>45-min</b>
                 </span>
               </div>
               <div className="tags">
-                <span className="tag">stack</span>
-                <span className="tag">stack</span>
+                <span className="tag">Node</span>
+                <span className="tag">Express</span>
+                <span className="tag">MongoDB</span>
+                <span className="tag">Vanilla JS</span>
               </div>
             </div>
-          </div>
-
-          {/* portfolio.sys */}
-          <div className="svc">
-            <div className="svc-viz">
-              <svg viewBox="0 0 300 74">
-                <defs>
-                  <pattern
-                    id="dd"
-                    width="16"
-                    height="16"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <circle
-                      cx="3"
-                      cy="3"
-                      r="1.1"
-                      fill="#666b64"
-                      opacity="0.6"
-                    />
-                  </pattern>
-                </defs>
-                <rect width="300" height="74" fill="url(#dd)" />
-                <circle
-                  cx="150"
-                  cy="37"
-                  r="20"
-                  fill="none"
-                  stroke="#748b91"
-                  strokeWidth="1"
-                  opacity="0.6"
-                />
-                <circle
-                  cx="150"
-                  cy="37"
-                  r="34"
-                  fill="none"
-                  stroke="#636467"
-                  strokeWidth="1"
-                  opacity="0.5"
-                />
-                <circle cx="150" cy="37" r="4" fill="#c1d1cf" />
-              </svg>
-            </div>
-            <div className="svc-pad">
-              <div className="svc-top">
-                <span className="svc-name">portfolio.sys</span>
-                <span className="health build">
-                  <span className="d" />
-                  deploying
-                </span>
-              </div>
-              <p className="svc-desc">
-                This site — a portfolio rendered as a live monitoring dashboard.
-                Meta, on purpose.
-              </p>
-              <div className="telemetry">
-                <span className="tele">
-                  uptime <b>building</b>
-                </span>
-                <span className="tele">
-                  commit <b>now</b>
-                </span>
-              </div>
-              <div className="tags">
-                <span className="tag">Next.js</span>
-                <span className="tag">TypeScript</span>
-                <span className="tag">FastAPI</span>
-              </div>
-            </div>
-          </div>
+          </a>
         </Reveal>
       </div>
     </section>

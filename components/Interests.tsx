@@ -1,7 +1,12 @@
 import Reveal from "@/components/Reveal";
 import styles from "./Interests.module.css";
 
-const PROCS = ["[ interest one ]", "[ interest two ]", "[ interest three ]"];
+const PROCS = [
+  "painting & graphic design",
+  "city exploration · new-food discovery",
+  "building side projects (always running)",
+  "gaming",
+];
 
 export default function Interests() {
   return (

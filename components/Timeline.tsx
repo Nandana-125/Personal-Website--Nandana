@@ -20,7 +20,7 @@ const NODES: Node[] = [
     kind: "current",
     org: "target launch · summer/fall 2026",
     points: [
-      "Frontend / full-stack / infra roles where the MLOps + UI combo matters",
+      "Frontend / Backend/ full-stack / infra roles where the MLOps + UI combo matters",
     ],
   },
   {
@@ -30,17 +30,17 @@ const NODES: Node[] = [
     kind: "education",
     org: "Northeastern University · Boston, MA",
     points: [
-      "Foundations of AI · DSA · DBMS · Web Dev · Mobile App Dev · MLOps",
+      "Foundations of AI · Algorithms · DBMS · Web Dev · Mobile App Dev · MLOps · Programming Design · Computer/Human Interaction",
     ],
   },
   {
-    when: "2025",
-    title: "1st Place — Google MLOps Expo",
+    when: "2026",
+    title: "1st Place🏆 — Google MLOps Expo",
     kind: "award",
     org: "Hackathon · observability tooling",
     points: [
-      "Built monitoring tooling with MLflow & Evidently",
-      "[ one line on what it did + why it won ]",
+      "Surfaced drift and performance regressions on a live dashboard",
+      "won for the most complete, deployable observability story.",
     ],
   },
   {
@@ -54,11 +54,13 @@ const NODES: Node[] = [
     ],
   },
   {
-    when: "[ year – year ]",
-    title: "Bachelor's Degree",
+    when: " 2021 - 2024 ",
+    title: "Bachelor's in Computer Applications",
     kind: "education",
-    org: "[ undergrad — degree, school ]",
-    points: ["[ highlight, GPA, or relevant coursework ]"],
+    org: "Christ University · Bangalore, INDIA ",
+    points: [
+      "Machine Learning · DSA · Cloud Computing · Python · C++ · Networking · OOP · Operating systems",
+    ],
   },
 ];
 

@@ -447,6 +447,9 @@ body.recruiter .vs-cur {
   border-radius: 12px;
   overflow: hidden;
   transition: 0.25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 .svc:hover {
   border-color: var(--line-2);

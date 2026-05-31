@@ -15,9 +15,15 @@ export default function About() {
               I build interfaces that think in systems.
             </p>
             <p className={styles.note}>
-              [ 2–3 sentences in your voice: what you love building, why the
-              frontend + MLOps combo is your edge, and what you&apos;re hunting
-              for next. Keep it human. ]
+              I' m a software engineer who' s just as happy designing a clean
+              interface as I am babysitting the pipeline underneath it — and I
+              watch production the way Dwight watches the office, so nothing
+              breaks without me noticing first. I love when something looks
+              simple on top and hides a genuinely complicated system below, and
+              I get a little too excited about dashboards and drift alerts. Off
+              the clock: painting and graphic design, exploring the city one new
+              restaurant at a time, and rewatching The Office for a frankly
+              unscientific number of times and calling it research.
             </p>
           </Reveal>
         </div>

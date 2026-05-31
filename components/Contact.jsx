@@ -116,10 +116,7 @@ export default function Contact() {
                     <span>GitHub</span>
                     <span className={styles.arr}>→</span>
                   </a>
-                  <a className={styles.link} href="tel:+18572104455">
-                    <span>+1 857-210-4455</span>
-                    <span className={styles.arr}>→</span>
-                  </a>
+
                   <a className={styles.link} href={`mailto:${EMAIL}`}>
                     <span>{EMAIL}</span>
                     <span className={styles.arr}>→</span>
