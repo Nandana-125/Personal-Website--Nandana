@@ -146,9 +146,7 @@ export default function Contact() {
               </button>
             </div>
             <div className={styles.frame}>
-              <div className={styles.fallback}>
-                add your résumé to preview it here
-              </div>
+              <div className={styles.fallback}></div>
               <iframe src="/resume.pdf" title="Résumé" />
             </div>
           </div>
