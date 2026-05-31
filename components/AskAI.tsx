@@ -42,6 +42,12 @@ const INTENTS: Intent[] = [
     go: "#timeline",
   },
   {
+    keys: ["activity", "commit", "throughput", "shipping", "pushes"],
+    reply:
+      "Here's her live GitHub activity — a feed of recent pushes and a throughput graph showing she's actively shipping ↓",
+    go: "#activity",
+  },
+  {
     keys: [
       "contact",
       "email",

@@ -12,7 +12,11 @@ type GHEvent = {
   type: string;
   created_at: string;
   repo?: { name?: string };
-  payload?: { commits?: { message?: string; sha?: string }[] };
+  payload?: {
+    commits?: { message?: string; sha?: string }[];
+    head?: string;
+    ref?: string;
+  };
 };
 
 function ago(d: Date) {
@@ -35,7 +39,9 @@ export default function GitHubActivity() {
 
   useEffect(() => {
     let alive = true;
-    fetch(`https://api.github.com/users/${USER}/events/public?per_page=100`)
+    fetch(`https://api.github.com/users/${USER}/events/public?per_page=100`, {
+      cache: "no-store",
+    })
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then((events: GHEvent[]) => {
         if (!alive) return;
@@ -44,15 +50,33 @@ export default function GitHubActivity() {
           .filter((e) => e.type === "PushEvent")
           .forEach((e) => {
             const repo = e.repo?.name || "";
-            (e.payload?.commits || []).forEach((c) => {
+            const date = new Date(e.created_at);
+            const cs = e.payload?.commits || [];
+            if (cs.length) {
+              cs.forEach((c) =>
+                commits.push({
+                  repo,
+                  msg: (c.message || "").split("\n")[0],
+                  url: `https://github.com/${repo}/commit/${c.sha}`,
+                  date,
+                })
+              );
+            } else {
+              const branch = (e.payload?.ref || "").replace("refs/heads/", "");
+              const sha = e.payload?.head || "";
               commits.push({
                 repo,
-                msg: (c.message || "").split("\n")[0],
-                url: `https://github.com/${repo}/commit/${c.sha}`,
-                date: new Date(e.created_at),
+                msg: `pushed to ${branch || "main"}${
+                  sha ? ` · #${sha.slice(0, 7)}` : ""
+                }`,
+                url: sha
+                  ? `https://github.com/${repo}/commit/${sha}`
+                  : `https://github.com/${repo}`,
+                date,
               });
-            });
+            }
           });
+
         commits.sort((a, b) => b.date.getTime() - a.date.getTime());
 
         const today = new Date();
@@ -95,7 +119,7 @@ export default function GitHubActivity() {
                 live commit feed
                 <span className={styles.right}>
                   {status === "ok"
-                    ? `${total} commits · ${DAYS}d`
+                    ? `${total} pushes · ${DAYS}d`
                     : status === "loading"
                     ? "syncing…"
                     : "offline"}
@@ -116,7 +140,7 @@ export default function GitHubActivity() {
                             ? `${Math.max(4, (v / max) * 100)}%`
                             : "0%",
                         }}
-                        title={`${v} commit${v === 1 ? "" : "s"}`}
+                        title={`${v} push${v === 1 ? "" : "es"}`}
                       />
                     ))}
                   </div>

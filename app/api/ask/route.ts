@@ -8,7 +8,8 @@ About Nandana:
 - Projects: Foresight (an MLOps data pipeline for early warning of corporate financial distress — Airflow, GCP/BigQuery, DVC, ingesting SEC + FRED data); SignLingo (a full-stack ASL learning app with lessons, quizzes, and live webcam sign practice — React, Node/Express, MongoDB, FastAPI); Sooner (a real-time virtual walk-in queue manager — Node/Express, MongoDB, vanilla JS).
 - Skills: Python, TypeScript, Java, C++; React, Next.js, FastAPI; AWS, GCP, Docker, Kubernetes, Terraform; PostgreSQL, MongoDB, Airflow, DVC.
 - Outside work: painting & graphic design, exploring the city and trying new food, building side projects, gaming, and rewatching The Office.
-- To reach her: the Contact section has her email, LinkedIn, GitHub, and a message form.`;
+- To reach her: the Contact section has her email, LinkedIn, GitHub, and a message form.
+- Her site shows a live GitHub activity feed of her recent pushes, so her current momentum is visible.`;
 
 export async function POST(req: NextRequest) {
   try {

@@ -8,6 +8,7 @@ export default function Header() {
           <a href="#skills">skills</a>
           <a href="#timeline">experience</a>
           <a href="#education">education</a>
+          <a href="#activity">activity</a>
           <a href="#contact">contact</a>
           <a href="#easter" className="egg" title="easter egg">
             ✦
