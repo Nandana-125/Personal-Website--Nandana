@@ -5,6 +5,7 @@ import Stars from "@/components/Stars";
 import Header from "@/components/Header";
 import RecruiterToggle from "@/components/RecruiterToggle";
 import AskAI from "@/components/AskAI";
+import { Analytics } from "@vercel/analytics/next";
 
 const sans = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         {children}
         <RecruiterToggle />
         <AskAI />
+        <Analytics />
       </body>
     </html>
   );
